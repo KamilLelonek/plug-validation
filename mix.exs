@@ -15,6 +15,7 @@ defmodule PlugExample.Mixfile do
   def application do
     [
       extra_applications: [:logger],
+      mod: {PlugExample, []},
     ]
   end
 
