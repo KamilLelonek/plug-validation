@@ -6,11 +6,23 @@ defmodule PlugExampleTest do
 
   @opts Router.init([])
 
-  test "should return :ok response" do
-    conn = :get |> conn("/") |> Router.call(@opts)
+  describe "failure" do
+    test "should reject a request with incomplete params" do
+      conn = :get |> conn("/") |> Router.call(@opts)
 
-    assert conn.state     == :sent
-    assert conn.status    == 200
-    assert conn.resp_body == "Hello from PlugExample!"
+      assert conn.state     == :sent
+      assert conn.status    == 400
+      assert conn.resp_body == "Query params: [\"page_size\"] must be provided!"
+    end
+  end
+
+  describe "success" do
+    test "should accept a request with all required params" do
+      conn = :get |> conn("/?page_size=10") |> Router.call(@opts)
+
+      assert conn.state     == :sent
+      assert conn.status    == 200
+      assert conn.resp_body == "Query params were: [\"page_size\"]."
+    end
   end
 end
