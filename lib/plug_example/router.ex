@@ -4,5 +4,7 @@ defmodule PlugExample.Router do
   plug :match
   plug :dispatch
 
-  get "/", do: send_resp(conn, 200, "Hello from PlugExample!")
+  forward "/",
+    to:        PlugExample.Plugs.RequireParams,
+    init_opts: [params: ["page_size"]]
 end
