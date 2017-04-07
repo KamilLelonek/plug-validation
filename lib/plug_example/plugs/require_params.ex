@@ -1,4 +1,4 @@
-defmodule PlugExample.Plugs.RequireParams do
+defmodule PlugValidation.Plugs.RequireParams do
   import Plug.Conn
 
   def init(opts),

@@ -1,10 +1,10 @@
-defmodule PlugExample.Router do
+defmodule PlugValidation.Router do
   use Plug.Router
 
   plug :match
   plug :dispatch
 
   forward "/",
-    to:        PlugExample.Plugs.RequireParams,
+    to:        PlugValidation.Plugs.RequireParams,
     init_opts: [params: ["page_size"]]
 end

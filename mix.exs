@@ -1,9 +1,9 @@
-defmodule PlugExample.Mixfile do
+defmodule PlugValidation.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app:             :plug_example,
+      app:             :plug_validation,
       version:         "0.1.0",
       elixir:          "~> 1.4",
       build_embedded:  Mix.env == :prod,
@@ -15,7 +15,7 @@ defmodule PlugExample.Mixfile do
   def application do
     [
       extra_applications: [:logger],
-      mod: {PlugExample, []},
+      mod: {PlugValidation, []},
     ]
   end
 

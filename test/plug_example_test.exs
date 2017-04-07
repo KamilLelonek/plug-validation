@@ -1,8 +1,8 @@
-defmodule PlugExampleTest do
+defmodule PlugValidationTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
-  alias PlugExample.Router
+  alias PlugValidation.Router
 
   @opts Router.init([])
 

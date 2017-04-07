@@ -1,4 +1,4 @@
-defmodule PlugExample do
+defmodule PlugValidation do
   use Application
 
   def start(_type, _args),
@@ -6,7 +6,7 @@ defmodule PlugExample do
 
   defp children do
     [
-      Plug.Adapters.Cowboy.child_spec(:http, PlugExample.Router, [], port: 8080)
+      Plug.Adapters.Cowboy.child_spec(:http, PlugValidation.Router, [], port: 8080)
     ]
   end
 end

@@ -1,8 +1,8 @@
-defmodule PlugExample.Plugs.RequireParamsTest do
+defmodule PlugValidation.Plugs.RequireParamsTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
-  alias PlugExample.Plugs.RequireParams
+  alias PlugValidation.Plugs.RequireParams
 
   @opts RequireParams.init([params: ["s"]])
 
